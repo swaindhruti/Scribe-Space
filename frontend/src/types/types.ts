@@ -1,9 +1,9 @@
 interface BlogCardProps {
-  BlogTitle: string;
-  BlogDescription: string;
-  CoverImageURL: string;
-  BlogAuthor: string;
-  ReadTime: string;
+  blogTitle: string;
+  blogDescription: string;
+  coverImageUrl: string;
+  blogAuthor: string;
+  readTime: string;
 }
 interface NavItem {
   label: string;

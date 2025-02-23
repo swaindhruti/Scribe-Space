@@ -1,37 +1,46 @@
 import { Link } from "react-router-dom";
-import navData from "@/config/Navbar/Data";
+import navData from "@/config/navbar/Data";
 import { Button } from "@/components/ui/button";
 import { NavItem } from "@/types/types";
-import { PenSquare } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navbar = () => (
-  <div className="flex justify-between border-4 border-black bg-orange-500 py-4 px-8 max-w-screen w-full">
-    <Link
-      to="/"
-      className="flex items-center gap-2 hover:scale-105 transition-transform"
-    >
-      <PenSquare size={40} className="text-primary" />
-      <span className="text-4xl font-semibold">Scribe Space</span>
-    </Link>
-    <div className="flex justify-start items-center space-x-12">
+  <motion.nav
+    initial={{ y: -100, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="flex justify-between border-b-4 border-black bg-orange-500 py-4 px-8 max-w-screen w-full "
+  >
+    <Link to="/" className="flex items-center gap-4 ">
+      <Button className="text-4xl font-semibold px-2 py-1 hover:shadow-none hover:translate-x-BoxShadowY hover:-translate-y-reverseBoxShadowY">
+        SCRIBE
+      </Button>
+      <Button className="text-4xl font-semibold px-2 py-1 shadow-none bg-black text-white">
+        SPACE
+      </Button>
+    </Link>{" "}
+    <div className="flex justify-start items-center space-x-10">
       {navData.map((navItem: NavItem) => (
-        <div key={navItem.label} className="flex">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
+          key={navItem.label}
+          className="flex"
+        >
           {navItem.isButton ? (
             <Link to={navItem.href}>
               <Button className="text-lg font-semibold">{navItem.label}</Button>
             </Link>
           ) : (
-            <Link
-              to={navItem.href}
-              className="text-xl font-semibold hover:scale-125 transition-all duration-300"
-            >
-              {navItem.label}
+            <Link to={navItem.href}>
+              <Button className="text-md font-semibold">{navItem.label}</Button>
             </Link>
           )}
-        </div>
+        </motion.div>
       ))}
     </div>
-  </div>
+  </motion.nav>
 );
 
 export default Navbar;

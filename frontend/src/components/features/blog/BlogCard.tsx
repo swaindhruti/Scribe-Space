@@ -9,27 +9,27 @@ import {
 import { BlogCardProps } from "@/types/types";
 
 const BlogCard = ({
-  BlogTitle,
-  BlogDescription,
-  CoverImageURL,
-  BlogAuthor,
-  ReadTime,
+  blogTitle,
+  blogDescription,
+  coverImageUrl,
+  blogAuthor,
+  readTime,
 }: BlogCardProps) => (
   <Card className="hover:translate-y-reverseBoxShadowX hover:translate-x-reverseBoxShadowX transition-all duration-300">
     <CardHeader className="p-0 mb-6">
       <img
-        src={CoverImageURL}
+        src={coverImageUrl}
         alt="Description"
-        className="object-cover w-64 h-60 md:w-96 md:h-72 max-w-full"
+        className="object-cover w-full h-60 md:h-72"
       />
     </CardHeader>
     <CardContent>
-      <CardTitle>{BlogTitle}</CardTitle>
-      <CardDescription>{BlogDescription}</CardDescription>
+      <CardTitle>{blogTitle}</CardTitle>
+      <CardDescription>{blogDescription}</CardDescription>
     </CardContent>
     <CardFooter className="justify-between">
-      <h4>{BlogAuthor}</h4>
-      <h4>{ReadTime}</h4>
+      <h4 className="text-sm">{blogAuthor}</h4>
+      <h4 className="text-sm">{readTime}</h4>
     </CardFooter>
   </Card>
 );
