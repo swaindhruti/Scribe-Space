@@ -9,7 +9,7 @@ const Navbar = () => (
     initial={{ y: -100, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 1, ease: "easeOut" }}
-    className="flex justify-between border-b-4 border-black bg-orange-500 py-4 px-8 max-w-screen w-full "
+    className="flex justify-between border-b-4 border-black bg-orange-500 py-4 px-8 max-w-screen w-full fixed z-50"
   >
     <Link to="/" className="flex items-center gap-4 ">
       <Button className="text-4xl font-semibold px-2 py-1 hover:shadow-none hover:translate-x-BoxShadowY hover:-translate-y-reverseBoxShadowY">
@@ -28,15 +28,11 @@ const Navbar = () => (
           key={navItem.label}
           className="flex"
         >
-          {navItem.isButton ? (
-            <Link to={navItem.href}>
-              <Button className="text-lg font-semibold">{navItem.label}</Button>
-            </Link>
-          ) : (
-            <Link to={navItem.href}>
-              <Button className="text-md font-semibold">{navItem.label}</Button>
-            </Link>
-          )}
+          <Link to={navItem.href}>
+            <Button className="text-lg font-semibold bg-white hover:bg-[var(--main)] transition-all duration-300">
+              {navItem.label}
+            </Button>
+          </Link>
         </motion.div>
       ))}
     </div>

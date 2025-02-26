@@ -8,7 +8,6 @@ interface BlogCardProps {
 interface NavItem {
   label: string;
   href: string;
-  isButton: boolean;
 }
 
 export type { BlogCardProps, NavItem };

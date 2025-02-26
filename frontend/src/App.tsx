@@ -126,7 +126,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#e0e7f1]">
       {/* Main Content */}
-      <div className="container mx-auto px-4 pt-20">
+      <div className="container mx-auto px-4 pt-20 mt-20 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -166,11 +166,11 @@ export default function Home() {
                   variants={itemVariants}
                   className="flex flex-col sm:flex-row gap-4"
                 >
-                  <Button className="px-6 py-6 text-3xl flex items-center justify-center gap-2">
+                  <Button className="px-6 py-6 text-3xl flex items-center justify-center gap-2 bg-orange-400">
                     Start Writing
                     <ArrowRight size={20} />
                   </Button>
-                  <Button className="px-6 py-6 text-3xl flex items-center justify-center gap-2 bg-orange-400">
+                  <Button className="px-6 py-6 text-3xl flex items-center justify-center gap-2 bg-white">
                     Explore Stories
                     <motion.div
                       animate={{ x: [0, 4, 0] }}
@@ -235,7 +235,7 @@ export default function Home() {
                 onHoverStart={() => setActiveFeature(index)}
                 onHoverEnd={() => setActiveFeature(null)}
               >
-                <Card className="p-8 relative overflow-hidden group border-4 bg-inherit hover:bg-orange-400 transition-all duration-500 hover:shadow-none hover:translate-x-boxShadowX hover:translate-y-boxShadowY">
+                <Card className="p-8 relative overflow-hidden group border-4 bg-white hover:bg-orange-400 transition-all duration-500 hover:shadow-none hover:translate-x-boxShadowX hover:translate-y-boxShadowY">
                   <motion.div
                     animate={{
                       scale: activeFeature === index ? 1.2 : 1,
@@ -302,11 +302,11 @@ export default function Home() {
           {/* Brands Marquee */}
           <motion.div variants={containerVariants} className=" mb-20">
             <div className="flex justify-center items-center mb-16">
-              <Card className="text-4xl font-[var(--heading-font-weight)] hover:shadow-none hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all duration-200">
+              <Card className="text-4xl font-[var(--heading-font-weight)] hover:shadow-none hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all duration-200 bg-white">
                 <CardHeader>Featured In</CardHeader>
               </Card>
             </div>
-            <Card className="p-8 bg-inherit overflow-hidden border-x-0 border-y-4 shadow-none">
+            <div className="p-8 bg-inherit overflow-hidden border-x-0 border-y-0 shadow-none">
               <div className="relative">
                 <motion.div
                   animate={{
@@ -325,14 +325,14 @@ export default function Home() {
                   {[...brands, ...brands].map((brand, index) => (
                     <Button
                       key={index}
-                      className="text-2xl font-[var(--heading-font-weight)] text-[var(--mtext)] py-6 bg-orange-400"
+                      className="text-2xl font-[var(--heading-font-weight)] text-[var(--mtext)] py-6 bg-orange-400 hover:bg-[var(--main)] hover:text-[var(--mtext)] transition-all duration-200"
                     >
                       {brand}
                     </Button>
                   ))}
                 </motion.div>
               </div>
-            </Card>
+            </div>
           </motion.div>
           {/* Testimonials Section */}
           <motion.div
@@ -341,7 +341,7 @@ export default function Home() {
           >
             <div className="p-8 relative space-y-20">
               <div className="flex justify-center items-center mb-8">
-                <Card className="text-4xl font-[var(--heading-font-weight)] hover:shadow-none hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all duration-200">
+                <Card className="text-4xl font-[var(--heading-font-weight)] hover:shadow-none hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all duration-200 bg-white">
                   <CardHeader>Writer Stories</CardHeader>
                 </Card>
               </div>
