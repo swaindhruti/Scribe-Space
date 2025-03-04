@@ -1,4 +1,4 @@
-import { NavItem } from "@/types/types";
+import { NavItem, FooterItem } from "@/types/types";
 
 const navData: NavItem[] = [
   {
@@ -23,4 +23,19 @@ const navData: NavItem[] = [
   },
 ];
 
-export default navData;
+const FooterData: FooterItem[] = [
+  {
+    label: "About",
+  },
+  {
+    label: "Github",
+  },
+  {
+    label: "Twitter",
+  },
+  {
+    label: "LinkedIn",
+  },
+];
+
+export { navData, FooterData };

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import navData from "@/config/navbar/Data";
+import { navData } from "@/config/marginals/Data";
 import { Button } from "@/components/ui/button";
 import { NavItem } from "@/types/types";
 import { motion } from "framer-motion";

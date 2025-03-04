@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { FooterData } from "@/config/marginals/Data";
 
 const Footer = () => (
   <motion.footer
@@ -18,54 +19,19 @@ const Footer = () => (
         </Button>
       </Link>
       <div className="flex flex-col md:flex-row justify-start items-center space-y-4 md:space-y-0 md:space-x-10">
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
-          className="flex"
-        >
-          <Link to="/about">
+        {FooterData.map((footerItem) => (
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
+            key={footerItem.label}
+            className="flex"
+          >
             <Button className="text-lg font-semibold bg-white hover:bg-[var(--main)] transition-all duration-300">
-              About
+              {footerItem.label}
             </Button>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
-          className="flex"
-        >
-          <Link to="/contact">
-            <Button className="text-lg font-semibold bg-white hover:bg-[var(--main)] transition-all duration-300">
-              Github
-            </Button>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
-          className="flex"
-        >
-          <Link to="/contact">
-            <Button className="text-lg font-semibold bg-white hover:bg-[var(--main)] transition-all duration-300">
-              Twitter
-            </Button>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.3, ease: "easeOut" }}
-          className="flex"
-        >
-          <Link to="/contact">
-            <Button className="text-lg font-semibold bg-white hover:bg-[var(--main)] transition-all duration-300">
-              LinkedIn
-            </Button>
-          </Link>
-        </motion.div>
+          </motion.div>
+        ))}
       </div>
     </div>
   </motion.footer>
