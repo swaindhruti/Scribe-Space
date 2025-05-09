@@ -62,5 +62,3 @@ We welcome contributions from the community! If you'd like to contribute, please
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 Happy writing with Scribe Space!
-
-DATABASE_URL="prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiM2Q3MWM5YWMtMGU2Ni00MjY4LWFhMWQtOGM0NzZlN2I5MmI1IiwidGVuYW50X2lkIjoiZDU5Y2M4MTgyYmNhMzY1ZTMxMjllZWMzZWY5NjlmNjIzMTU3Y2U0NjE5ZGY0ZmQxNTJiMGI3Yzk0YmUzZTZmMyIsImludGVybmFsX3NlY3JldCI6IjVkMWI3OTQxLTc5MTMtNDY1Yy04MThkLTYyMDNlOTc0M2UzZiJ9.7UvomGgFflfdD7TgkxdsP2i7NjDuDmdwNXMWz81Ovmc"
